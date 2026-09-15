@@ -294,6 +294,7 @@ h3{font-size:clamp(1.35rem,2.2vw,1.85rem);letter-spacing:-.03em;line-height:1.05
 .equipe-role{display:block;margin-top:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--mute)}
 .atend-acao{display:flex;flex-direction:column;align-items:center;gap:1.3rem}
 .atend-acao .btn{font-size:1.03rem;padding:1.2rem 2.5rem}
+.atend-links{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem 1.6rem}
 .atend-alt{display:inline-flex;align-items:center;gap:.5rem;color:var(--azul-esc);font-weight:600;font-size:.92rem;transition:color .25s}
 .atend-alt:hover{color:var(--azul)}
 .atend-fine{font-size:.85rem;color:var(--mute);line-height:1.65;max-width:58ch;margin:0 auto}
@@ -625,10 +626,16 @@ footer{background:var(--tinta);color:rgba(243,240,233,.6);margin-top:clamp(3.5re
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.17c-.24.68-1.42 1.3-1.95 1.35-.5.05-.98.23-3.3-.69-2.78-1.1-4.55-3.94-4.69-4.13-.14-.19-1.12-1.49-1.12-2.85s.71-2.02.97-2.3c.25-.27.55-.34.73-.34s.36 0 .52.01c.17.01.39-.06.61.47.24.55.8 1.92.87 2.06.07.14.12.3.02.49-.09.19-.14.3-.28.47-.14.16-.3.36-.42.48-.14.14-.29.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.28.37-.23.62-.14.25.09 1.62.76 1.9.9.28.14.46.21.53.32.07.12.07.65-.16 1.32z"/></svg>
         Falar pelo WhatsApp
       </a>
-      <a class="atend-alt" href="mailto:miguelmendesfilho25@gmail.com">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
-        Prefere e-mail? miguelmendesfilho25@gmail.com
-      </a>
+      <div class="atend-links">
+        <a class="atend-alt" href="mailto:miguelmendesfilho25@gmail.com">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
+          miguelmendesfilho25@gmail.com
+        </a>
+        <a class="atend-alt" href="https://www.instagram.com/mendes.filho_adv.associados/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          @mendes.filho_adv.associados
+        </a>
+      </div>
       <p class="atend-fine">Publicidade de caráter informativo. Nenhuma informação desta página representa promessa de resultado. A viabilidade das medidas depende da análise jurídica individual de cada caso.</p>
     </div>
   </div>
@@ -641,7 +648,7 @@ footer{background:var(--tinta);color:rgba(243,240,233,.6);margin-top:clamp(3.5re
         <a class="logo" href="#capa" aria-label="Mendes Filho &amp; Advogados Associados">
           <img src="img/logo.svg" alt="Mendes Filho &amp; Advogados Associados" width="260" height="131">
         </a>
-        <p>Rua Rio Grande do Sul, 756 · conjunto 906<br>Barro Preto · Belo Horizonte/MG<br><a href="tel:+5531999666472">(31) 99966-6472</a><br><a href="mailto:miguelmendesfilho25@gmail.com">miguelmendesfilho25@gmail.com</a></p>
+        <p>Rua Rio Grande do Sul, 756 · conjunto 906<br>Barro Preto · Belo Horizonte/MG<br><a href="tel:+5531999666472">(31) 99966-6472</a><br><a href="mailto:miguelmendesfilho25@gmail.com">miguelmendesfilho25@gmail.com</a><br><a href="https://www.instagram.com/mendes.filho_adv.associados/" target="_blank" rel="noopener">@mendes.filho_adv.associados</a></p>
       </div>
       <div>
         <h4>Navegar</h4>
@@ -674,7 +681,7 @@ footer{background:var(--tinta);color:rgba(243,240,233,.6);margin-top:clamp(3.5re
 </div>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LegalService","name":"Mendes Filho & Advogados Associados","description":"Atuação jurídica dedicada à defesa de motoboys e entregadores em Belo Horizonte, do acidente de trabalho ao reconhecimento do vínculo empregatício.","areaServed":"Belo Horizonte e região metropolitana","telephone":"+55-31-99966-6472","email":"miguelmendesfilho25@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Rua Rio Grande do Sul, 756, conjunto 906, Barro Preto","addressLocality":"Belo Horizonte","addressRegion":"MG","postalCode":"30170-135","addressCountry":"BR"},"knowsAbout":["Acidente de trabalho","Reconhecimento de vínculo empregatício","Lucros cessantes","Danos emergentes","Direito previdenciário"]}
+{"@context":"https://schema.org","@type":"LegalService","name":"Mendes Filho & Advogados Associados","description":"Atuação jurídica dedicada à defesa de motoboys e entregadores em Belo Horizonte, do acidente de trabalho ao reconhecimento do vínculo empregatício.","areaServed":"Belo Horizonte e região metropolitana","telephone":"+55-31-99966-6472","email":"miguelmendesfilho25@gmail.com","sameAs":["https://www.instagram.com/mendes.filho_adv.associados/"],"address":{"@type":"PostalAddress","streetAddress":"Rua Rio Grande do Sul, 756, conjunto 906, Barro Preto","addressLocality":"Belo Horizonte","addressRegion":"MG","postalCode":"30170-135","addressCountry":"BR"},"knowsAbout":["Acidente de trabalho","Reconhecimento de vínculo empregatício","Lucros cessantes","Danos emergentes","Direito previdenciário"]}
 </script>
 
 <script>
