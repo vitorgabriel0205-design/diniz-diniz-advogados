@@ -152,7 +152,11 @@ h3{font-size:clamp(1.35rem,2.2vw,1.85rem);letter-spacing:-.03em;line-height:1.05
 .capa .over i{width:26px;height:1px;background:rgba(241,239,234,.5);flex:none}
 .capa h1{color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.4)}
 .capa h1 br{display:block;content:""}
-.capa h1 .grad{filter:drop-shadow(0 2px 24px rgba(46,91,216,.4))}
+.capa h1 .grad{
+  filter:drop-shadow(0 2px 24px rgba(46,91,216,.4));
+  background:linear-gradient(96deg,var(--azul) 6%,var(--azul-cl) 50%,#A6C4FF 94%);
+  background-size:220% 100%;-webkit-background-clip:text;background-clip:text;
+}
 .capa-q{
   font-family:var(--disp);font-weight:600;font-size:clamp(1.2rem,2vw,1.62rem);letter-spacing:-.03em;line-height:1.16;
   margin-top:clamp(1.3rem,2.4vw,1.9rem);color:#fff;max-width:26ch;
@@ -164,7 +168,7 @@ h3{font-size:clamp(1.35rem,2.2vw,1.85rem);letter-spacing:-.03em;line-height:1.05
   padding-top:clamp(1.1rem,2vw,1.5rem);border-top:1px solid rgba(241,239,234,.16);
 }
 .capa-adv{display:flex;align-items:center;gap:.7rem;font-size:.82rem;color:rgba(241,239,234,.72)}
-.capa-adv img{width:42px;height:42px;flex:none;border-radius:50%;object-fit:cover;object-position:center 12%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.28),0 4px 12px rgba(0,0,0,.3)}
+.capa-adv img{width:42px;height:42px;flex:none;border-radius:50%;object-fit:cover;object-position:center center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.28),0 4px 12px rgba(0,0,0,.3)}
 .capa-adv b{display:block;color:#fff;font-weight:700;font-family:var(--disp);font-size:.98rem;letter-spacing:-.02em;line-height:1.1}
 .capa-adv em{font-style:normal;display:block;margin-top:.12rem}
 .scroll-h{position:absolute;right:var(--pad);bottom:clamp(2.6rem,6vw,4.4rem);z-index:2;display:flex;flex-direction:column;align-items:center;gap:.6rem;color:rgba(241,239,234,.6);font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
@@ -231,6 +235,27 @@ h3{font-size:clamp(1.35rem,2.2vw,1.85rem);letter-spacing:-.03em;line-height:1.05
 .chips li:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 1px rgba(46,91,216,.34)}
 .chips li svg{width:15px;height:15px;flex:none;color:var(--azul)}
 
+/* checklist da capa */
+.capa-mini{margin-top:1.1rem;font-size:.85rem;color:rgba(241,239,234,.62);max-width:48ch;line-height:1.55}
+.capa-checks{margin-top:1.5rem}
+
+/* ═════════ COMO FUNCIONA — etapas ═════════ */
+.passos{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2.4vw,1.6rem);margin-top:clamp(2rem,4vw,3rem)}
+.passo{background:var(--papel2);border-radius:var(--r);padding:clamp(1.6rem,2.6vw,2.2rem);box-shadow:inset 0 0 0 1px rgba(16,24,35,.07)}
+.passo b{font-family:var(--disp);font-weight:800;font-size:clamp(2rem,3.4vw,2.6rem);color:rgba(46,91,216,.24);display:block;margin-bottom:.7rem;line-height:1}
+.passo h3{color:var(--tinta);margin-bottom:.5rem;font-size:clamp(1.15rem,1.6vw,1.4rem)}
+.passo p{color:var(--mute);font-size:.97rem;line-height:1.62}
+@media(max-width:760px){.passos{grid-template-columns:1fr}}
+
+/* ═════════ DÚVIDAS FREQUENTES ═════════ */
+.faq{display:grid;gap:.85rem;max-width:54rem}
+.faq details{background:var(--papel2);border-radius:16px;padding:1.3rem 1.7rem;box-shadow:inset 0 0 0 1px rgba(16,24,35,.07)}
+.faq summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1.2rem;font-family:var(--disp);font-weight:700;font-size:clamp(1rem,1.3vw,1.12rem);color:var(--tinta)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--azul);flex:none;transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{color:var(--mute);margin-top:.9rem;line-height:1.62;font-size:.96rem;max-width:64ch}
+
 /* ═════════ FRASE DE IDENTIDADE ═════════ */
 .frase{position:relative;overflow:hidden;isolation:isolate;background:var(--tinta);color:var(--papel);border-radius:var(--r);margin:0 var(--pad)}
 .frase-in{position:relative;z-index:3;padding:clamp(3.2rem,8vw,7rem) clamp(1.5rem,5vw,5rem);max-width:60rem}
@@ -259,7 +284,7 @@ h3{font-size:clamp(1.35rem,2.2vw,1.85rem);letter-spacing:-.03em;line-height:1.05
 }
 .equipe-card{margin:0;text-align:left}
 .equipe-foto{
-  display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 6%;
+  display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center center;
   border-radius:clamp(16px,2vw,24px);background:var(--tinta2);
   box-shadow:0 24px 50px rgba(16,24,35,.22),inset 0 0 0 1px rgba(16,24,35,.06);
 }
@@ -348,12 +373,13 @@ footer{background:var(--tinta);color:rgba(243,240,233,.6);margin-top:clamp(3.5re
     <div class="menu">
       <a href="#direitos">Seus direitos</a>
       <a href="#acidente">O acidente</a>
+      <a href="#faq">Dúvidas</a>
       <a href="#atendimento">Atendimento</a>
     </div>
     <button class="burg" id="burg" aria-label="Menu"><span></span></button>
     <a class="btn btn-c" data-wa="Olá. Sou motoboy e gostaria de falar com um advogado sobre o meu caso." href="#">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.17c-.24.68-1.42 1.3-1.95 1.35-.5.05-.98.23-3.3-.69-2.78-1.1-4.55-3.94-4.69-4.13-.14-.19-1.12-1.49-1.12-2.85s.71-2.02.97-2.3c.25-.27.55-.34.73-.34s.36 0 .52.01c.17.01.39-.06.61.47.24.55.8 1.92.87 2.06.07.14.12.3.02.49-.09.19-.14.3-.28.47-.14.16-.3.36-.42.48-.14.14-.29.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.28.37-.23.62-.14.25.09 1.62.76 1.9.9.28.14.46.21.53.32.07.12.07.65-.16 1.32z"/></svg>
-      Fale com um advogado
+      Falar pelo WhatsApp
     </a>
   </div>
 </div>
@@ -367,21 +393,29 @@ footer{background:var(--tinta);color:rgba(243,240,233,.6);margin-top:clamp(3.5re
   <div class="wrap capa-in">
     <span class="over"><i></i> Acidente · Vínculo · Indenizações</span>
     <h1><span class="pal">Advocacia</span> <span class="pal">para</span><br><span class="pal grad">motoboys.</span></h1>
-    <p class="capa-q rev">Sofreu um acidente trabalhando ou presta serviços sem registro?</p>
-    <p class="capa-p rev">Atuação jurídica dedicada à defesa de motoboys e entregadores, do acidente de trabalho ao reconhecimento do vínculo empregatício.</p>
+    <p class="capa-q rev">Um acidente pode parar sua moto, sua renda e sua rotina.</p>
+    <p class="capa-p rev">Antes de aceitar o prejuízo sozinho, veja quais direitos podem ser analisados no seu caso. Atuação jurídica dedicada à defesa de motoboys e entregadores, do acidente de trabalho ao reconhecimento do vínculo empregatício.</p>
     <div class="capa-bts rev">
       <a class="btn btn-c" data-wa="Olá. Sou motoboy e gostaria de falar com um advogado sobre o meu caso." href="#">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.17c-.24.68-1.42 1.3-1.95 1.35-.5.05-.98.23-3.3-.69-2.78-1.1-4.55-3.94-4.69-4.13-.14-.19-1.12-1.49-1.12-2.85s.71-2.02.97-2.3c.25-.27.55-.34.73-.34s.36 0 .52.01c.17.01.39-.06.61.47.24.55.8 1.92.87 2.06.07.14.12.3.02.49-.09.19-.14.3-.28.47-.14.16-.3.36-.42.48-.14.14-.29.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.28.37-.23.62-.14.25.09 1.62.76 1.9.9.28.14.46.21.53.32.07.12.07.65-.16 1.32z"/></svg>
-        Fale com um advogado
+        Falar pelo WhatsApp
       </a>
       <a class="btn btn-cl" href="#direitos">
-        Ver os direitos
+        Ver direitos que podem ser analisados
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
       </a>
     </div>
+    <p class="capa-mini rev">Análise jurídica individual. O resultado depende das provas e das circunstâncias de cada caso.</p>
+    <ul class="chips capa-checks rev">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>Quem causou o acidente?</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>Você perdeu renda?</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>Houve fratura ou sequela?</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>A moto ou os equipamentos foram danificados?</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>Foi no trabalho ou no trajeto?</li>
+    </ul>
     <div class="capa-oab rev">
-      <span class="capa-adv"><img src="img/adv-diniz.jpg" alt="" width="880" height="1100"><span><b>Admilson Diniz</b><em>OAB/MG 106.349</em></span></span>
-      <span class="capa-adv"><img src="img/adv-miguel.jpg" alt="" width="880" height="1100"><span><b>Miguel Mendes</b><em>OAB/MG 120.741</em></span></span>
+      <span class="capa-adv"><img src="img/adv-diniz.jpg" alt="" width="1100" height="1100"><span><b>Admilson Diniz</b><em>OAB/MG 106.349</em></span></span>
+      <span class="capa-adv"><img src="img/adv-miguel.jpg" alt="" width="1100" height="1100"><span><b>Miguel Mendes</b><em>OAB/MG 120.741</em></span></span>
     </div>
   </div>
   <div class="scroll-h"><span>Seus direitos</span><i></i></div>
@@ -401,6 +435,7 @@ footer{background:var(--tinta);color:rgba(243,240,233,.6);margin-top:clamp(3.5re
     <a href="#lucros">Lucros cessantes</a>
     <a href="#danos">Danos emergentes</a>
     <a href="#indenizacoes">Indenizações</a>
+    <a href="#provas">Provas</a>
   </div>
 
   <article class="dir rev-e" id="acidente">
@@ -470,6 +505,44 @@ footer{background:var(--tinta);color:rgba(243,240,233,.6);margin-top:clamp(3.5re
       </ul>
     </div>
   </article>
+
+  <article class="dir rev-e" id="provas">
+    <div class="dir-mark">
+      <span class="dir-n">06</span>
+      <span class="dir-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M9 13h6M9 17h6M9 9h1"/></svg></span>
+    </div>
+    <div>
+      <h3>Organização das provas</h3>
+      <p class="dir-q">Já separou boletim, fotos, laudos e comprovantes de renda?</p>
+      <p class="dir-d">Boletim de ocorrência, prontuários, laudos, fotos, vídeos, recibos, extratos, conversas, dados de aplicativo e demais documentos relacionados ao acidente ajudam a sustentar cada um dos pontos anteriores.</p>
+    </div>
+  </article>
+</section>
+
+<!-- ═════════ COMO FUNCIONA ═════════ -->
+<section class="sec wrap" id="como-funciona">
+  <div class="cab rev">
+    <span class="kick"><i></i> Como funciona</span>
+    <h2>Um caminho claro <span class="grad">em três etapas.</span></h2>
+    <p>Da denúncia dos fatos até a orientação jurídica, cada etapa existe pra reunir o que realmente sustenta o seu caso.</p>
+  </div>
+  <div class="passos">
+    <div class="passo rev-e">
+      <b>01</b>
+      <h3>Conte o acidente</h3>
+      <p>Como aconteceu, onde você estava, quem se envolveu e quais foram as consequências.</p>
+    </div>
+    <div class="passo rev-e">
+      <b>02</b>
+      <h3>Envie os documentos</h3>
+      <p>Boletim, laudos, fotos, comprovantes de renda e demais provas relacionadas ao acidente e ao trabalho.</p>
+    </div>
+    <div class="passo rev-e">
+      <b>03</b>
+      <h3>Receba a orientação jurídica</h3>
+      <p>Depois da análise, ficam claros os direitos juridicamente sustentáveis e as medidas possíveis pro seu caso concreto.</p>
+    </div>
+  </div>
 </section>
 
 <!-- ═════════ FRASE DE IDENTIDADE ═════════ -->
@@ -486,6 +559,40 @@ footer{background:var(--tinta);color:rgba(243,240,233,.6);margin-top:clamp(3.5re
   </div>
 </section>
 
+<!-- ═════════ DÚVIDAS FREQUENTES ═════════ -->
+<section class="sec wrap" id="faq">
+  <div class="cab rev">
+    <span class="kick"><i></i> Dúvidas frequentes</span>
+    <h2>Perguntas de quem <span class="grad">depende da moto</span> pra trabalhar.</h2>
+  </div>
+  <div class="faq">
+    <details class="rev">
+      <summary>Estava trabalhando no momento do acidente. Isso muda alguma coisa?</summary>
+      <p>Pode mudar bastante. Além da responsabilidade pelo acidente em si, podem existir repercussões trabalhistas e previdenciárias. A conclusão depende da relação de trabalho, do contexto do acidente e das provas disponíveis.</p>
+    </details>
+    <details class="rev">
+      <summary>Sou motoboy de aplicativo e não tenho carteira assinada. Ainda posso ter direitos?</summary>
+      <p>A ausência de registro não encerra a análise por si só. É preciso verificar a forma real como o trabalho era prestado e as provas existentes, o que pode revelar um vínculo empregatício nunca reconhecido.</p>
+    </details>
+    <details class="rev">
+      <summary>Fiquei alguns dias sem trabalhar. Posso cobrar a renda que perdi?</summary>
+      <p>A perda de renda pode ser juridicamente relevante. Comprovantes de ganhos anteriores, extratos, histórico de entregas e outros documentos ajudam a demonstrar o prejuízo.</p>
+    </details>
+    <details class="rev">
+      <summary>Minha moto foi danificada. O conserto pode entrar no pedido?</summary>
+      <p>Dependendo da responsabilidade pelo acidente e da prova do prejuízo, os danos materiais podem integrar a pretensão indenizatória.</p>
+    </details>
+    <details class="rev">
+      <summary>Tenho uma sequela que dificulta pilotar. Isso pode gerar pensão?</summary>
+      <p>A redução permanente da capacidade para o trabalho pode justificar a análise de pensionamento e outras reparações, normalmente com apoio em documentação médica e, quando necessário, prova pericial.</p>
+    </details>
+    <details class="rev">
+      <summary>Quais documentos devo separar antes de falar com um advogado?</summary>
+      <p>Boletim de ocorrência, fotos e vídeos, documentos médicos, receitas, notas e recibos, comprovantes de renda, dados de aplicativo, conversas, documentos da moto e informações sobre testemunhas.</p>
+    </details>
+  </div>
+</section>
+
 <!-- ═════════ ATENDIMENTO ═════════ -->
 <section class="sec wrap" id="atendimento">
   <div class="atend">
@@ -495,14 +602,14 @@ footer{background:var(--tinta);color:rgba(243,240,233,.6);margin-top:clamp(3.5re
 
     <div class="equipe">
       <figure class="equipe-card rev-e">
-        <img class="equipe-foto" src="img/adv-diniz.jpg" alt="Admilson Diniz, advogado" width="880" height="1100">
+        <img class="equipe-foto" src="img/adv-diniz.jpg" alt="Admilson Diniz, advogado" width="1100" height="1100">
         <figcaption>
           <span class="equipe-meta"><span class="equipe-n">Admilson Diniz</span><span class="equipe-oab">OAB/MG 106.349</span></span>
           <span class="equipe-role">Advogado</span>
         </figcaption>
       </figure>
       <figure class="equipe-card rev-e">
-        <img class="equipe-foto" src="img/adv-miguel.jpg" alt="Miguel Mendes, advogado" width="880" height="1100">
+        <img class="equipe-foto" src="img/adv-miguel.jpg" alt="Miguel Mendes, advogado" width="1100" height="1100">
         <figcaption>
           <span class="equipe-meta"><span class="equipe-n">Miguel Mendes</span><span class="equipe-oab">OAB/MG 120.741</span></span>
           <span class="equipe-role">Advogado</span>
@@ -515,7 +622,7 @@ footer{background:var(--tinta);color:rgba(243,240,233,.6);margin-top:clamp(3.5re
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.17c-.24.68-1.42 1.3-1.95 1.35-.5.05-.98.23-3.3-.69-2.78-1.1-4.55-3.94-4.69-4.13-.14-.19-1.12-1.49-1.12-2.85s.71-2.02.97-2.3c.25-.27.55-.34.73-.34s.36 0 .52.01c.17.01.39-.06.61.47.24.55.8 1.92.87 2.06.07.14.12.3.02.49-.09.19-.14.3-.28.47-.14.16-.3.36-.42.48-.14.14-.29.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.28.37-.23.62-.14.25.09 1.62.76 1.9.9.28.14.46.21.53.32.07.12.07.65-.16 1.32z"/></svg>
         Falar pelo WhatsApp
       </a>
-      <p class="atend-fine">Atuação jurídica voltada a motoboys e profissionais de entrega. O reconhecimento de direitos depende das circunstâncias e das provas de cada caso.</p>
+      <p class="atend-fine">Publicidade de caráter informativo. Nenhuma informação desta página representa promessa de resultado. A viabilidade das medidas depende da análise jurídica individual de cada caso.</p>
     </div>
   </div>
 </section>
@@ -527,7 +634,7 @@ footer{background:var(--tinta);color:rgba(243,240,233,.6);margin-top:clamp(3.5re
         <a class="logo" href="#capa" aria-label="Mendes Filho &amp; Advogados Associados">
           <img src="img/logo.svg" alt="Mendes Filho &amp; Advogados Associados" width="260" height="131">
         </a>
-        <p>Rua Rio Grande do Sul, 756 · conjunto 906<br>Barro Preto · Belo Horizonte/MG<br><a href="tel:+5531984176096">(31) 98417-6096</a></p>
+        <p>Rua Rio Grande do Sul, 756 · conjunto 906<br>Barro Preto · Belo Horizonte/MG<br><a href="tel:+5531999666472">(31) 99966-6472</a><br><a href="mailto:miguelmendesfilho25@gmail.com">miguelmendesfilho25@gmail.com</a></p>
       </div>
       <div>
         <h4>Navegar</h4>
@@ -552,20 +659,20 @@ footer{background:var(--tinta);color:rgba(243,240,233,.6);margin-top:clamp(3.5re
 <div class="barra" id="barra">
   <a class="btn btn-c" data-wa="Olá. Sou motoboy e gostaria de falar com um advogado sobre o meu caso." href="#">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.17c-.24.68-1.42 1.3-1.95 1.35-.5.05-.98.23-3.3-.69-2.78-1.1-4.55-3.94-4.69-4.13-.14-.19-1.12-1.49-1.12-2.85s.71-2.02.97-2.3c.25-.27.55-.34.73-.34s.36 0 .52.01c.17.01.39-.06.61.47.24.55.8 1.92.87 2.06.07.14.12.3.02.49-.09.19-.14.3-.28.47-.14.16-.3.36-.42.48-.14.14-.29.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.28.37-.23.62-.14.25.09 1.62.76 1.9.9.28.14.46.21.53.32.07.12.07.65-.16 1.32z"/></svg>
-    Fale com um advogado
+    Falar pelo WhatsApp
   </a>
-  <a class="btn btn-cl" href="tel:+5531984176096" aria-label="Ligar">
+  <a class="btn btn-cl" href="tel:+5531999666472" aria-label="Ligar">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
   </a>
 </div>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LegalService","name":"Mendes Filho & Advogados Associados","description":"Atuação jurídica dedicada à defesa de motoboys e entregadores em Belo Horizonte, do acidente de trabalho ao reconhecimento do vínculo empregatício.","areaServed":"Belo Horizonte e região metropolitana","telephone":"+55-31-98417-6096","address":{"@type":"PostalAddress","streetAddress":"Rua Rio Grande do Sul, 756, conjunto 906, Barro Preto","addressLocality":"Belo Horizonte","addressRegion":"MG","postalCode":"30170-135","addressCountry":"BR"},"knowsAbout":["Acidente de trabalho","Reconhecimento de vínculo empregatício","Lucros cessantes","Danos emergentes","Direito previdenciário"]}
+{"@context":"https://schema.org","@type":"LegalService","name":"Mendes Filho & Advogados Associados","description":"Atuação jurídica dedicada à defesa de motoboys e entregadores em Belo Horizonte, do acidente de trabalho ao reconhecimento do vínculo empregatício.","areaServed":"Belo Horizonte e região metropolitana","telephone":"+55-31-99966-6472","email":"miguelmendesfilho25@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Rua Rio Grande do Sul, 756, conjunto 906, Barro Preto","addressLocality":"Belo Horizonte","addressRegion":"MG","postalCode":"30170-135","addressCountry":"BR"},"knowsAbout":["Acidente de trabalho","Reconhecimento de vínculo empregatício","Lucros cessantes","Danos emergentes","Direito previdenciário"]}
 </script>
 
 <script>
 (function(){
-  var FONE = '5531984176096';
+  var FONE = '5531999666472';
 
   function wa(txt){ return 'https://wa.me/' + FONE + '?text=' + encodeURIComponent(txt); }
   document.querySelectorAll('[data-wa]').forEach(function(a){
